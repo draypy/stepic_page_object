@@ -15,3 +15,5 @@ class ProductLocators:
     ADDED_TO_BASKET = (By.XPATH, '//div[@class="alertinner "]')
     PRODUCT_PRICE = (By.CSS_SELECTOR, 'p.price_color')
     BASKET_PRICE = (By.CSS_SELECTOR, "div.alertinner  > p > strong")
+    BASKET_PRODUCT_NAME = (By.CSS_SELECTOR, "div.alertinner  > strong")
+    PRODUCT_NAME = (By.CSS_SELECTOR, "h1")

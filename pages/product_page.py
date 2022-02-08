@@ -23,6 +23,11 @@ class ProductPage(BasePage):
         button.click()
         self.solve_quiz_and_get_code()
 
+    def check_naming_product_and_basket_product(self):
+        book_name = self.browser.find_element(*ProductLocators.PRODUCT_NAME)
+        basket_book_name = self.browser.find_element(*ProductLocators.BASKET_PRODUCT_NAME)
+        assert book_name.text == basket_book_name.text, "names are incorrect"
+
     def solve_quiz_and_get_code(self):
         alert = self.browser.switch_to.alert
         x = alert.text.split(" ")[2]
