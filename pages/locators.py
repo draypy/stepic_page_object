@@ -17,3 +17,4 @@ class ProductLocators:
     BASKET_PRICE = (By.CSS_SELECTOR, "div.alertinner  > p > strong")
     BASKET_PRODUCT_NAME = (By.CSS_SELECTOR, "div.alertinner  > strong")
     PRODUCT_NAME = (By.CSS_SELECTOR, "h1")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, 'div.alerinner ')
