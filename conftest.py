@@ -1,5 +1,3 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pytest
@@ -20,3 +18,8 @@ def browser(request):
     yield browser
     print("\nquit browser..")
     browser.quit()
+
+
+@pytest.fixture(scope='session')
+def link_to():
+    return "http://selenium1py.pythonanywhere.com"
