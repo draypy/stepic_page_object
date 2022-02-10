@@ -2,6 +2,7 @@ import time
 
 from .base_page import BasePage
 from .locators import ProductLocators
+from .locators import BasePageLocators
 from selenium.common.exceptions import NoAlertPresentException
 import math
 
@@ -21,7 +22,10 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         button = self.browser.find_element(*ProductLocators.ADD_TO_BASKET)
         button.click()
-        self.solve_quiz_and_get_code()
+
+    def go_to_basket(self):
+        basket_btn = self.browser.find_element(*BasePageLocators.BASKET_BTN)
+        basket_btn.click()
 
     def check_naming_product_and_basket_product(self):
         book_name = self.browser.find_element(*ProductLocators.PRODUCT_NAME)

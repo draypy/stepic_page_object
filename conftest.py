@@ -1,6 +1,9 @@
+from .pages.locators import LoginPageLocators
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 import pytest
+import faker
+import time
 
 
 def pytest_addoption(parser):
@@ -23,3 +26,20 @@ def browser(request):
 @pytest.fixture(scope='session')
 def link_to():
     return "http://selenium1py.pythonanywhere.com"
+
+
+@pytest.fixture(scope='session')
+def link_to_product():
+    return "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"
+
+
+@pytest.fixture(scope='function')
+def email():
+    f = faker.Faker()
+    email = f.email()
+    return email
+
+
+@pytest.fixture(scope='function')
+def password():
+    return str(int(time.time()) // 44) + "AVG"

@@ -8,6 +8,9 @@ class MainPageLocators:
 class LoginPageLocators:
     LOGIN_SUBMIT = (By.NAME, "login_submit")
     REGISTER_SUBMIT = (By.NAME, 'registration_submit')
+    EMAIL_FIELD = (By.CSS_SELECTOR, "#id_registration-email")
+    PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password1")
+    CONFIRM_PASSWORD_FIELD = (By.CSS_SELECTOR, "#id_registration-password2")
 
 
 class ProductLocators:
@@ -22,3 +25,5 @@ class ProductLocators:
 
 class BasePageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    USER_ICON = (By.CSS_SELECTOR, ".icon-user")
+    BASKET_BTN = (By.CSS_SELECTOR, "span.btn-group")
