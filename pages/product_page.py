@@ -1,13 +1,14 @@
-import time
-
 from .base_page import BasePage
 from .locators import ProductLocators
-from .locators import BasePageLocators
 from selenium.common.exceptions import NoAlertPresentException
 import math
 
 
 class ProductPage(BasePage):
+    def check_text_adding_to_basket_solve(self):
+        self.solve_quiz_and_get_code()
+        assert self.is_element_present(*ProductLocators.ADDED_TO_BASKET), 'Book didnt add to basket'
+
     def check_button_add_to_basket(self):
         assert self.is_element_present(*ProductLocators.ADD_TO_BASKET), '"Add to basket button" is not implemented'
 
@@ -22,10 +23,6 @@ class ProductPage(BasePage):
     def add_to_basket(self):
         button = self.browser.find_element(*ProductLocators.ADD_TO_BASKET)
         button.click()
-
-    def go_to_basket(self):
-        basket_btn = self.browser.find_element(*BasePageLocators.BASKET_BTN)
-        basket_btn.click()
 
     def check_naming_product_and_basket_product(self):
         book_name = self.browser.find_element(*ProductLocators.PRODUCT_NAME)

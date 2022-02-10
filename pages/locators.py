@@ -5,6 +5,10 @@ class MainPageLocators:
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 
+class BasketPageLocators:
+    EMPTY = (By.CSS_SELECTOR, "div#content_inner")
+
+
 class LoginPageLocators:
     LOGIN_SUBMIT = (By.NAME, "login_submit")
     REGISTER_SUBMIT = (By.NAME, 'registration_submit')
